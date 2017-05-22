@@ -1,55 +1,51 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserSignin from './UserSignin';
-import Image from './images/map.jpg';
-import Pina from './images/pina.jpg';
-import Luau from './images/luau.jpg'
+import welcome from './welcome';
 
 class App extends Component {
   constructor() {
     super();
+
     this.state = {
-      name: '',
-      message: '',
-      // nextScene:nextSence
-      image: '',
-      text: ''
-
+      textHeader: welcome.textHeader,
+      textBody: welcome.textBody,
+      adventureImage: welcome.adventureImage,
+      textButton: welcome.textButton,
+      nextAdventure: welcome.nextAdventure,
+      previousAdventure: welcome.previousAdventure
     }
-
-    this.changeName = this.changeName.bind(this);
-
-  }
-  changeName(name) {
-    this.setState({ name });
-  }
-
-  changeMessage(message) {
-    this.setState({ message });
   }
 
   changeScene(nextScene) {
-    this.setState({ nextScene });
-  }
-  changeImage(image) {
-    this.setState({ image });
-
+    this.setState({ 
+      textHeader: nextScene.textHeader,
+      textBody: nextScene.textBody,
+      adventureImage: nextScene.adventureImage,
+      textButton: nextScene.textButton,
+      nextAdventure: nextScene.nextAdventure,
+      previousAdventure: nextScene.previousAdventure
+    });
   }
 
   render() {
-    const { name, message, image } = this.state;
+    const { textHeader, textBody, textButton, adventureImage, nextAdventure } = this.state;
 
 
     return (
       <div>
-        <UserSignin
-          name={name}
-          changeName={this.changeName}
-        />
-        {/* <SceneOne/>*/}
-
-        <div className="adventureMessage"></div>
-        <h2>Good Morning {name}, you have been transported to Hawaii. Congratulations! </h2>
+        <div className="adventureMessage">
+          <h2>{textHeader}</h2>
+          <h2>{textBody}</h2>
+          <img src={adventureImage} />
+          <button
+            onClick={e => {
+              e.preventDefault();
+              this.changeScene(nextAdventure)
+            }}
+          >
+            {textButton}</button>
+        </div>
+        {/*        
         <img src={Image} className="welcomeImage" />
         <h2>Send A message to all your rained out PDX homies: {this.state.message}</h2>
         <form className="message-form"
@@ -92,7 +88,7 @@ class App extends Component {
             <img src={Luau} className="luau"/>
           </div>
         
-        </div>
+        </div>*/}
       </div>
 
     );
