@@ -3,8 +3,9 @@ import luau from './luau';
 
 export default {
   previousAdventure: luau,
-  textHeader: 'have a pina colada',
-  textBody: 'Surfer dude wants to give you a drink!',
+  textHeader: 'First things first...drink up!',
+  textBody: 'Drink this Pina Colada and head to the beach!',
   adventureImage: pina,
-  textButton: 'drink!'
+  textButton: 'drink!',
+  drunk:true
 }

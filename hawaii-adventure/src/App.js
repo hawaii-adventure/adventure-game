@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import welcome from './welcome';
+import Message from './Message';
+import Drunk from './Drunk';
 
 class App extends Component {
   constructor() {
@@ -12,32 +14,52 @@ class App extends Component {
       adventureImage: welcome.adventureImage,
       textButton: welcome.textButton,
       nextAdventure: welcome.nextAdventure,
-      previousAdventure: welcome.previousAdventure
+      previousAdventure: welcome.previousAdventure,
+      message: welcome.message,
+      drunk: welcome.drunk
     }
+
+    this.changeMessage = this.changeMessage.bind(this);
+    this.drinkPina = this.drinkPina.bind(this);
+  }
+
+  changeMessage(message) {
+    this.changeMessage({ message });
+  }
+
+  drinkPina(drunk) {
+    this.drinkPina({ drunk });
   }
 
   changeScene(nextScene) {
-    this.setState({ 
+    this.setState({
       textHeader: nextScene.textHeader,
       textBody: nextScene.textBody,
       adventureImage: nextScene.adventureImage,
       textButton: nextScene.textButton,
       nextAdventure: nextScene.nextAdventure,
-      previousAdventure: nextScene.previousAdventure
+      previousAdventure: nextScene.previousAdventure,
+      message: false,
+      // drunk: false
     });
   }
 
   render() {
-    const { textHeader, textBody, textButton, adventureImage, nextAdventure } = this.state;
+    const { textHeader, textBody, textButton, adventureImage, nextAdventure, message, drunk } = this.state;
 
 
     return (
-      <div>
-        <div className="adventureMessage">
-          <h2>{textHeader}</h2>
-          <h2>{textBody}</h2>
-          <img src={adventureImage} />
-          <button
+
+      <div className="adventureMessage">
+        <h2>{textHeader}</h2>
+        <h2>{textBody}</h2>
+        {drunk && <Drunk
+          drunk={drunk} />}
+        <img src={adventureImage} />
+        <div>
+          {message && <Message
+            message={message} />}
+          <button className="move-on"
             onClick={e => {
               e.preventDefault();
               this.changeScene(nextAdventure)
@@ -45,6 +67,7 @@ class App extends Component {
           >
             {textButton}</button>
         </div>
+
         {/*        
         <img src={Image} className="welcomeImage" />
         <h2>Send A message to all your rained out PDX homies: {this.state.message}</h2>
@@ -89,7 +112,7 @@ class App extends Component {
           </div>
         
         </div>*/}
-      </div>
+      </div >
 
     );
   }
