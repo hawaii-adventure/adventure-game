@@ -40,12 +40,12 @@ class App extends Component {
       nextAdventure: nextScene.nextAdventure,
       previousAdventure: nextScene.previousAdventure,
       message: false,
-      // drunk: false
+      drinkButton: false
     });
   }
 
   render() {
-    const { textHeader, textBody, textButton, adventureImage, nextAdventure, message, drunk } = this.state;
+    const { textHeader, textBody, textButton, adventureImage, nextAdventure, message, drinkButton } = this.state;
 
 
     return (

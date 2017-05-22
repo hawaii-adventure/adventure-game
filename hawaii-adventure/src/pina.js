@@ -6,6 +6,6 @@ export default {
   textHeader: 'First things first...drink up!',
   textBody: 'Drink this Pina Colada and head to the beach!',
   adventureImage: pina,
-  textButton: 'drink!',
-  drunk:true
+  drinkButton: 'Drink!',
+  textButton: 'Go To Beach!',
 }
