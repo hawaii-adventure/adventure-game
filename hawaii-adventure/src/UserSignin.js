@@ -33,11 +33,11 @@ function UserSignin(props) {
                 name="submit"
             />
         </form>
-        {/*<div className="welcomeImageContainer"
+        <div className="welcomeImageContainer"
         style={{
             backgroundImage:`url(${Image})`,
             backgroundSize: 'cover',}}>
-        </div>*/}
+        </div>
       </div >
     );
 }

@@ -9,9 +9,9 @@ function Drunk(props) {
 
         <div>
             <button className="drinkButton"
-                onCLick={event => {
+                onClick={event => {
                     event.preventDefault();
-                    props.drinkPina(newImage) > DRINK ME!
+                    props.drinkPina(newImage)}}>DRINK ME!
             </button>
     </div>
     )

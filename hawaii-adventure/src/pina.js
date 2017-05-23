@@ -1,6 +1,7 @@
 import pina from './images/pina.jpg';
 import luau from './luau';
 
+
 export default {
   previousAdventure: luau,
   textHeader: 'First things first...drink up!',

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import welcome from './welcome';
 import Message from './Message';
-import Drunk from './Drunk';
+// import Drunk from './Drunk';
 
 class App extends Component {
   constructor() {
@@ -49,12 +49,11 @@ class App extends Component {
 
 
     return (
-
-      <div className="adventureMessage">
+      <div className="adventureMessage" style={{ backgroundImage: `url(${adventureImage}`, backgroundRepeat: 'no-repeat' }} >
         <h2>{textHeader}</h2>
         <h2>{textBody}</h2>
-        {drunk && <Drunk
-          drunk={drunk} />}
+        {/*{drunk && <Drunk
+          drunk={drunk} />}*/}
         <img src={adventureImage} />
         <div>
           {message && <Message
