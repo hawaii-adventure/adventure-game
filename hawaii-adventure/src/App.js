@@ -7,17 +7,17 @@ import luau from './images/luau.jpg'
 
 class App extends Component {
   constructor() {
-    super();
-    this.state = {
+    super();    
+
+      this.state = {
       CurrentScene: Transport,
       name: '',
       message: '',
      
       text: ''
-
-    }
-
-    this.changeName = this.changeName.bind(this);
+  }
+    
+        this.changeName = this.changeName.bind(this);
 
   }
   changeName(name) {
@@ -51,6 +51,8 @@ class App extends Component {
           message={message}
           name={name}
         />
+        
+
         <button className="move-on" onClick={() => this.changeScene('nextScene')}>CheckOut What Happens Next!</button>
 
 
@@ -72,6 +74,7 @@ class App extends Component {
           </div>
 
         </div>
+
       </div>
 
     );
